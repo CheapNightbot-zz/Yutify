@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import base64
 import requests
@@ -28,23 +29,43 @@ class Yutify:
 
 
   # Put everything together to get Spotify music URL
-  def get_music_url(self, yt_url: str):
+  def get_music_url(self, yt_url):
 
-    if not yt_url.startswith('http'):
+    validation_result = self.validate_youtube_url(yt_url)
+
+    try:
+      if 'error' in validation_result:
+        return validation_result
+
+      else:
+        music_info = self.get_music_info(yt_url)
+        try:
+          artist_name = music_info["artist"]
+          song_name = music_info["song_name"]
+        except KeyError:
+          return music_info #error
+
+        token = self.get_spotify_token()
+        result = self.search_music(token, artist_name, song_name)
+
+        return result
+
+    except:
+      return {'error': 'OH MA BOT, Something unexpected happened! Try again later...'}
+
+
+  # Validate the youtube url using regular expressions
+  def validate_youtube_url(self, yt_url):
+
+    youtube_url_pattern = re.compile(
+        r'^(https?://)?(www\.)?(youtube\.com/watch\?v=|youtu\.be/|music\.youtube\.com/watch\?v=)[\w-]{11}$'
+    )
+    
+    if not youtube_url_pattern.match(yt_url):
       return {'error': 'Please enter a valid YouTube™ music video URL.'}
+    
+    return {'result': 'URL is valid'}
 
-    else:
-      music_info = self.get_music_info(yt_url)
-      try:
-        artist_name = music_info["artist"]
-        song_name = music_info["song_name"]
-      except KeyError:
-        return music_info #error
-
-      token = self.get_spotify_token()
-      result = self.search_music(token, artist_name, song_name)
-
-      return result
 
   # Get artist & song name from YouTube URL
   def get_music_info(self, yt_url):
