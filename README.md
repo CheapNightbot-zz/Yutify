@@ -12,6 +12,6 @@ I don't know, it's kool... 😳
 
 ## Disclaimer
 
-> __YUTIFY__ IS NOT AFFILIATED WITH __SPOTIFY&REG;__ OR __YOUTUBE&TRADE;__ IN ANY WAY.
+> __YUTIFY__ IS NOT AFFILIATED WITH __SPOTIFY&REG;__ OR __YOUTUBE&TRADE;__ IN ANY WAY NOR ENDORSED BY THEM.
 
 All trademarks, logos, and content displayed on the application are the property of their respective owners.
