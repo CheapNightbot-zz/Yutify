@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Yutify</title>
+    <link rel="icon" href="{{ url_for('favicon') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- FONTS & ICONS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shizuru">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ruwudu">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header id="page-header">
+        <div class="header-div">
+            <a href="/"><img src="static/Yutify.png" alt="Yutify Logo" class="logo-img"></a>
+            <span class="logo-text">
+                <a href="/">Yutify: YouTube™ to Spotify&reg;</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="body-content" id="body-content">
+        <h1>Terms of Service</h1>
+
+        <h3>1. Introduction</h3>
+
+        <p>
+            Welcome to <b>Yutify</b> &lpar;the <b>"Web Application"</b> or <b>"the Service"</b>&rpar;. By accessing or
+            using the Web Application,
+            you agree to comply with and be bound by these Terms of Service. If you do not agree with
+            these terms, please do not use the application.
+        </p>
+
+        <h3>2. Use of the Service</h3>
+        <p>
+            <b>Yutify</b> allows you to search for songs on Spotify based on YouTube video URLs. The application
+            provides temporary
+            information and does not store any data locally.
+            Our web application is provided for personal and non-commercial use.
+        </p>
+
+        <h3>3. User Responsibility</h3>
+        <p>
+            You are responsible for the content you submit to the application.
+            Do not use the application for any unlawful or unauthorized purposes.
+        </p>
+
+        <h3>4. User Privacy</h3>
+        <p>
+            We do not collect any personal user data.
+            For information about what data we collect and how we handle your data, please refer to our
+            <a href="/privacy-policy">Privacy Policy</a>.
+        </p>
+
+        <h3>5. Intellectual Property</h3>
+        <p>
+            All trademarks, logos, and content displayed on the application are the property of their respective owners.
+            All content and materials provided by the Service, including but not limited to text, graphics, images,
+            and audio, are protected by copyright and other intellectual property laws. You may not reproduce,
+            distribute, or create derivative works based on the Service's content without proper authorization.
+        </p>
+
+        <h3>6. Third-Party Services</h3>
+
+        <p>
+            Our web application uses the <a href="https://ytmusicapi.readthedocs.io/" target="_blank"
+                rel="noopener noreferrer">"ytmusicapi: Unofficial API for YouTube Music"</a> solely for the purpose of
+            retrieving the song name/title and artist&lpar;s&rpar; name from YouTube music video link&lpar;s&rpar;
+            provided by users. We do not attempt to download or play any content from YouTube / YouTube Music using this
+            API.
+        </p>
+        <p>
+            We use the <a href="https://developer.spotify.com/documentation/web-api" target="_blank"
+                rel="noopener noreferrer">Spotify API</a>
+            to fetch and display track information from Spotify. By using our Service, you acknowledge that your use of
+            the Service is subject to Spotify's <a href="https://www.spotify.com/in-en/legal/end-user-agreement/" target="_blank" rel="noopener noreferrer">Terms of Service</a> and <a href="https://www.spotify.com/in-en/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+            We do not control the privacy practices of Spotify, and we encourage you to review their Terms of Service and Privacy Policy.
+        </p>
+
+        <h3>7. Purpose of the Web Application</h3>
+
+        The main purpose of our web application is to make it easier for users to find their favorite songs from YouTube
+        on Spotify. By entering a YouTube Music video link, our application searches for the song's title and artist(s)
+        on Spotify using the Spotify API. If a matching song is found on Spotify, we display relevant information such
+        as title, artists, album art, an embed for the song's preview, and a URL to Spotify song. All displayed
+        information is temporary
+        and not cached or stored locally by our application. When a user requests a new song or refreshes the page, all
+        previous data is wiped.
+
+        <h3>8. No Content Storage</h3>
+
+        <p>
+            We want to emphasize that our web application does not download, cache, or store any content retrieved from
+            the
+            "ytmusicapi" or the Spotify API. The displayed information and data are provided on a temporary basis for
+            immediate user interaction. No information is retained after a user request or session is completed.
+        </p>
+
+        <h3>9. Disclaimer</h3>
+        <p>
+            <b>YUTIFY</b> IS NOT AFFILIATED WITH <b>SPOTIFY&REG;</b> OR <b>YOUTUBE&TRADE;</b> IN ANY WAY NOR ENDORSED BY THEM.
+        </p>
+        <p>
+            The web application provides information based on user input and does not guarantee accuracy or availability
+            of data. While we strive to provide accurate and up-to-date information, we cannot guarantee the
+            availability or accuracy of song data retrieved from external sources, including "ytmusicapi" and the
+            Spotify API.
+        </p>
+
+        <h3>10. Limitation of Liability</h3>
+        <p>
+            The Service is provided "as is" without any warranties or guarantees of any kind in a hope that it will be
+            helpful to others.
+            We are not responsible for any damages or losses arising from your use of the Service.
+        </p>
+
+        <h3>11. Changes to Terms of Service</h3>
+        <p>
+            We reserve the right to update these Terms of Service at any time without perior notice.
+            Continued use of the application after any changes signifies your acceptance of the modified terms.
+        </p>
+
+        <h3>12. License and Attribution</h3>
+
+        <p>
+            Our web application is open source and hosted on GitHub. You can find the source code and license
+            information <a href="https://github.com/CheapNightbot/Yutify" target="_blank">here</a>.
+        </p>
+
+        <h3>13. Contact Us</h3>
+        <p>
+            If you have any questions or concerns about these Terms of Service,
+            please contact us at <!-- add later -->
+        </p>
+
+        <h3>14. Agreement</h3>
+
+        <p>
+            By using the Service, you acknowledge that you have read, understood, and agreed to these Terms of Service.
+        </p>
+
+        <p>Last updated: August 25, 2023</p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="page-footer">
+        <div class="footer-content">
+            <p>&copy; 2023 Cheap Nightbot | All Rights Reserved</p>
+            <p>&lpar;〃￣ω￣〃ゞ</p>
+            <div class="footer-links">
+                <a href="https://github.com/CheapNightbot/Yutify/blob/main/LICENSE" target="_blank">Source Code</a>
+                <a href="/terms-of-service">Terms of Service</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+            </div>
+            <div class="social-media">
+                <ul>
+                    <li><a href="https://github.com/CheapNightbot" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-github" style="color: #000000; font-size: 20px;"></i></a></li>
+                    <li><a href="https://youtube.com/@CheapNightbot" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-youtube" style="color: #000000; font-size: 20px;"></i></a></li>
+                    <li><a href="https://g.dev/CheapNightbot" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-dev" style="color: #000000; font-size: 20px;"></i></a></li>
+                    <li><a href="https://cheapnightbot.medium.com" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-medium" style="color: #000000; font-size: 20px;"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
