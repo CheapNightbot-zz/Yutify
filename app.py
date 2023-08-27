@@ -1,12 +1,11 @@
 import os
-import redis
 from main import Yutify
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
 # ~
-redis_uri = redis.from_url(os.environ['REDIS_URL'])
+redis_uri = os.environ['REDIS_URL']
 
 
 app = Flask(__name__)
