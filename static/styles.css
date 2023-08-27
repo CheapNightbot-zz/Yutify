@@ -175,8 +175,15 @@ a:visited, a::before {
     100% { transform: rotate(360deg); }
 }
 
-.result-container p{
+.result-container p {
     display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.limit-p {
+    display: block;
     justify-content: center;
     margin-left: 10%;
     margin-right: 10%;
