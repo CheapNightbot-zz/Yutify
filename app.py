@@ -13,7 +13,7 @@ app = Flask(__name__)
 limiter = Limiter(
     key_func=get_remote_address, 
     app=app, 
-    default_limits=["20 per day"],
+    default_limits=["50 per day"],
     storage_uri=redis_uri, 
     storage_options={"socket_connect_timeout": 30}, 
     strategy="fixed-window"
@@ -30,7 +30,7 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'Yutify-favicon.png', mimetype='image/png')
 
 @app.route('/search', methods=['POST'])
-@limiter.limit("5/hour", override_defaults=False)
+@limiter.limit("1/minute", override_defaults=False)
 def search():
     yt_url = request.form.get('yt_url')
     result = yutify.get_music_url(yt_url)
