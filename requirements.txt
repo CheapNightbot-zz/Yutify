@@ -2,5 +2,6 @@ Flask
 Flask-Limiter
 gunicorn
 python-dotenv
+redis
 requests
 ytmusicapi
