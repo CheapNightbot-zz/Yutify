@@ -12,7 +12,6 @@ app = Flask(__name__)
 limiter = Limiter(
     key_func=get_remote_address, 
     app=app, 
-    default_limits=["50 per day"],
     storage_uri=redis_uri, 
     strategy="fixed-window"
     )
@@ -28,7 +27,8 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'Yutify-favicon.png', mimetype='image/png')
 
 @app.route('/search', methods=['POST'])
-@limiter.limit("5/minute", override_defaults=False)
+@limiter.limit("5/minute")
+@limiter.limit("50 per day")
 def search():
     yt_url = request.form.get('yt_url')
     result = yutify.get_music_url(yt_url)
@@ -46,9 +46,9 @@ def privacy_policy():
 def page_not_found(error):
     return render_template('404.html'), 404
 
-# @app.errorhandler(429)
-# def rate_limited_page(error):
-#     return render_template('429.html'), 429
+@app.errorhandler(429)
+def rate_limited_page(error):
+    return render_template('429.html'), 429
 
 @app.route('/429')
 def rate_limited_page():
