@@ -178,6 +178,8 @@ a:visited, a::before {
 .result-container p{
     display: flex;
     justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .embed-container {

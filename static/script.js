@@ -38,6 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
             body: new URLSearchParams({ yt_url: searchInputValue }),
         });
 
+        // Check the response status code
+        if (response.status === 429) {
+            // Redirect to the rate-limited page
+            window.location.href = '/429';
+            return;  // Return to prevent further execution of the function`
+        }
+
         // Parse the response as JSON
         const data = await response.json();
 

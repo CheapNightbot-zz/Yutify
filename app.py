@@ -1,8 +1,24 @@
 import os
+import redis
 from main import Yutify
 from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+
+# ~
+redis_uri = redis.from_url(os.environ['REDIS_URL'])
+
 
 app = Flask(__name__)
+limiter = Limiter(
+    key_func=get_remote_address, 
+    app=app, 
+    default_limits=["20 per day"],
+    storage_uri=redis_uri, 
+    storage_options={"socket_connect_timeout": 30}, 
+    strategy="fixed-window"
+    )
+
 yutify = Yutify()
 
 @app.route('/')
@@ -11,10 +27,10 @@ def home():
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'Yutify-favicon.png', mimetype='image/png')
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'Yutify-favicon.png', mimetype='image/png')
 
 @app.route('/search', methods=['POST'])
+@limiter.limit("5/hour", override_defaults=False)
 def search():
     yt_url = request.form.get('yt_url')
     result = yutify.get_music_url(yt_url)
@@ -30,9 +46,16 @@ def privacy_policy():
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('page_not_found.html'), 404
+    return render_template('404.html'), 404
 
+# @app.errorhandler(429)
+# def rate_limited_page(error):
+#     return render_template('429.html'), 429
+
+@app.route('/429')
+def rate_limited_page():
+    return render_template('429.html')
 
 if __name__ == "__main__":
-    
+
     app.run()

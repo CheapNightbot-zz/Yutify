@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Yutify | Too Many Requests | Error 429</title>
+    <link rel="icon" href="{{ url_for('favicon') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- FONTS & ICONS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shizuru">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ruwudu">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header id="page-header">
+        <div class="header-div">
+            <a href="/"><img src="static/Yutify.png" alt="Yutify Logo" class="logo-img"></a>
+            <span class="logo-text">
+                <a href="/">Yutify: YouTube™ to Spotify®</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="result-container" id="result-container">
+        <h1>Too Many Requests | Error 429</h1>
+        You are being rate limited. Please try again after few minutes.
+        <p>
+            We recieved too many requests from you within a short period of time. Such behavior is considered an abuse of
+            our services and has the potential to disrupt not only our platform but also third-party services that we
+            rely upon. Continuous engagement in such behavior may result
+            in a permanent ban from utilizing our services, as we consider this an abuse not only of our service but
+            also of third-party services.
+
+        </p>
+
+        <a href="/">
+            <button type="button" class="buttons">Home</button>
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="page-footer">
+        <div class="footer-content">
+            <p>&copy; 2023 Cheap Nightbot | All Rights Reserved</p>
+            <p>&lpar;〃￣ω￣〃ゞ</p>
+            <div class="footer-links">
+                <a href="https://github.com/CheapNightbot/Yutify/blob/main/LICENSE" target="_blank">Source Code</a>
+                <a href="/terms-of-service">Terms of Service</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+            </div>
+            <div class="social-media">
+                <ul>
+                    <li><a href="https://github.com/CheapNightbot" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-github" style="color: #000000; font-size: 20px;"></i></a></li>
+                    <li><a href="https://youtube.com/@CheapNightbot" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-youtube" style="color: #000000; font-size: 20px;"></i></a></li>
+                    <li><a href="https://g.dev/CheapNightbot" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-dev" style="color: #000000; font-size: 20px;"></i></a></li>
+                    <li><a href="https://cheapnightbot.medium.com" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-medium" style="color: #000000; font-size: 20px;"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
