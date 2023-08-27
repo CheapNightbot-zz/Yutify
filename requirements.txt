@@ -1,4 +1,4 @@
-flask==2.3.3
+Flask
 Flask-Limiter==3.4.0
 gunicorn==21.2.0
 python-dotenv==1.0.0
