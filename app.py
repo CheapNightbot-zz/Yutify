@@ -3,10 +3,10 @@ from main import Yutify
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from limits.storage import storage_from_string
 
 # ~
-redis_uri = os.environ['REDIS_URL']
-
+redis_uri = storage_from_string(os.environ['REDIS_URL'])
 
 app = Flask(__name__)
 limiter = Limiter(
