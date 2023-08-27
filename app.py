@@ -1,12 +1,13 @@
 import os
+import redis
 from main import Yutify
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from limits.storage import storage_from_string
 
 # ~
-redis_uri = storage_from_string(os.environ['REDIS_URL'])
+redis_uri = redis.from_url(os.environ['REDIS_URL'])
+
 
 app = Flask(__name__)
 limiter = Limiter(
@@ -14,7 +15,6 @@ limiter = Limiter(
     app=app, 
     default_limits=["50 per day"],
     storage_uri=redis_uri, 
-    storage_options={"socket_connect_timeout": 30}, 
     strategy="fixed-window"
     )
 
@@ -29,7 +29,7 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'Yutify-favicon.png', mimetype='image/png')
 
 @app.route('/search', methods=['POST'])
-@limiter.limit("1/minute", override_defaults=False)
+@limiter.limit("5/minute", override_defaults=False)
 def search():
     yt_url = request.form.get('yt_url')
     result = yutify.get_music_url(yt_url)
