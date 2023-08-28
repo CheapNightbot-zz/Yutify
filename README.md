@@ -4,7 +4,7 @@
 
 > Visit: https://yutify.onrender.com
 
-<video src="media/Yutify%20DEMO.mp4" controls loop title="Yutify DEMO"></video>
+https://github.com/CheapNightbot/Yutify/assets/107001527/db0b6dbe-6fb3-44c5-adf5-3fd71a5c723d
 
 ***
 
