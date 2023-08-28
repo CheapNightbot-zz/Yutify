@@ -359,6 +359,17 @@ footer {
         color: rgb(0, 0, 0);
         font-family: 'Shizuru';
     }
+
+    .body-content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        width: 80%;
+        height: 75vh;
+        margin-left: 10%;
+        scrollbar-width: none;
+    }
     /* --------------------------- */
     /* --------- SEARCH BAR --------- */
     .search-container {
@@ -593,7 +604,7 @@ footer {
         flex-direction: column;
         overflow: auto;
         width: 80%;
-        height: 80vh;
+        height: 75vh;
         margin-left: 10%;
         scrollbar-width: none;
         margin-top: 15%;
